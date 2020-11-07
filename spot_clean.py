@@ -8,6 +8,8 @@ def clean(df):
         
     df["genre"].fillna("Unknown",inplace = True) #Fill the Nan value
 
+    df['year'] = df.year.astype('str')
+
     #Choose Only thai song
     rm_ind = list()
     for i in range(len(df)):
@@ -20,5 +22,6 @@ def clean(df):
     df_thai['add_year'] = df_thai.added.str[:4]
     df_thai['add_month'] = df_thai.added.str[5:7]
 
-    df_thai.drop("added",axis = 1,inplace = True     )
+    df_thai.drop("added",axis = 1,inplace = True)
+
     return df_thai  
