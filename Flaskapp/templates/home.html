@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1">
+        <title>My first data science project</title>
+        <link rel = "stylesheet" href ="{{url_for('static',filename='styles/style.css')}}">
+        <link href='styles.css?version=1' rel='stylesheet'></link>
+    </head>
+       
+    <body>
+        
+        <h1 class = "center">Song Cluster Analysis and Recommendation</h1>
+        <img class ="center" src = "\static\styles\spot_pic.jpg">
+        <p>audio feature define from <a href = "http://organizeyourmusic.playlistmachinery.com/#" , target ="_blank">here</a> </p>
+
+        <ul>
+            <li>
+                <b>BPM(bpm)</b> - The tempo of the song.
+            </li>
+            <li>
+                <b>Energy(nrgy)</b> - The energy of a song the higher the value, the more energtic song.
+            </li>
+            <li>
+                <b>Danceability(dnce)</b> - The higher the value, the easier it is to dance to this song.
+            </li>
+            <li>
+                <b>Loudness (dB)</b> - The higher the value, the louder the song.
+            </li>
+            <li>
+                <b>Liveness(live)</b> - The higher the value, the more likely the song is a live recording.
+            </li>
+            <li>
+                <b>Valence(val)</b> - The higher the value, the more positive mood for the song.
+            </li>
+            <li>
+                <b>Length(dur)</b> - The duration of the song (seconds)
+            </li>
+            <li>
+                <b>Acousticness(acous)</b> - The higher the value the more acoustic the song is.
+            </li>
+            <li>
+                <b>Speechiness(spch)</b> - The higher the value the more spoken word the song contains.
+            </li>
+        </ul>
+
+        
+
+
+        <p class = "underline"><b>Rank order of preference in audio feature or input the feature in the box by yourself</b><p>
+        <p>you can find your favourite song and see the audio feature from<a href = "http://organizeyourmusic.playlistmachinery.com/#" , target ="_blank"> this link</a></p>
+       
+
+
+        <form  method = "POST" , action = "{{ url_for('home')}}">
+
+            <b>BPM</b> : <br> 
+            <label for="a little">a little</label><input type="radio" name="a"  value="70">
+            <input type="radio" name="a" value="105">
+            <input type="radio" name="a"  value="140">
+            <input type="radio" name="a" value="175">
+            <input type="radio" name="a"  value="210">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="a"  value="100000">
+            <input type = "text" , name = 'a_input' , placeholder="range between 62 to 210">  <br>
+            <br>
+
+            <b>Energy</b> :  <br> 
+            <label for="a little">a little</label><input type="radio" name="b"  value="10">
+            <input type="radio" name="b" value="30">
+            <input type="radio" name="b"  value="50">
+            <input type="radio" name="b" value="70">
+            <input type="radio" name="b"  value="90">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="b"  value="100000">
+            <input type = "text" , name = 'b_input' , placeholder="range between 0 to 100">  <br>
+            <br>
+
+            <b>Danceability</b> : <br>
+            <label for="a little">a little</label><input type="radio" name="c"  value="10">
+            <input type="radio" name="c" value="30">
+            <input type="radio" name="c"  value="50">
+            <input type="radio" name="c" value="70">
+            <input type="radio" name="c"  value="90">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="c"  value="100000">
+            <input type = "text" , name = 'c_input' , placeholder="range between 0 to 100"> <br>
+            <br>
+
+            <b>Loudness</b> : <br> 
+            <label for="a little">a little</label><input type="radio" name="d"  value="-20">
+            <input type="radio" name="d" value="-15">
+            <input type="radio" name="d"  value=-10>
+            <input type="radio" name="d" value="-5">
+            <input type="radio" name="d"  value="0">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="d"  value="100000">
+            <input type = "text" , name = 'd_input' , placeholder="range between -20 to 0"> <br>
+            <br>
+
+            <b>Liveness</b> : <br> 
+            <label for="a little">a little</label><input type="radio" name="e"  value="10">
+            <input type="radio" name="e" value="30">
+            <input type="radio" name="e"  value="50">
+            <input type="radio" name="e" value="70">
+            <input type="radio" name="e"  value="90">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="e"  value="100000">
+            <input type = "text" , name = 'e_input' , placeholder="range between 0 to 100"> <br>
+            <br>
+
+            <b>Valence</b> : <br>
+            <label for="a little">a little</label><input type="radio" name="f"  value="10">
+            <input type="radio" name="f" value="30">
+            <input type="radio" name="f"  value="50">
+            <input type="radio" name="f" value="70">
+            <input type="radio" name="f"  value="90">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="f"  value="100000">
+            <input type = "text" , name = 'f_input' , placeholder="range between 0 to 100"> <br>
+            <br>
+
+            <b>Length</b> : <br>
+            <label for="short song">a short song</label><input type="radio" name="g"  value="80">
+            <input type="radio" name="g" value="180">
+            <input type="radio" name="g"  value="280">
+            <input type="radio" name="g"  value="380">
+            <label for="long song">long song</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="g"  value="100000">
+            <input type = "text" , name = 'g_input' , placeholder="range between 60 to 400"> <br>
+            <br>
+
+
+            <b>Acousticness</b> : <br>
+            <label for="a little">a little</label><input type="radio" name="h"  value="10">
+            <input type="radio" name="h" value="30">
+            <input type="radio" name="h"  value="50">
+            <input type="radio" name="h" value="70">
+            <input type="radio" name="h"  value="90">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="h"  value="100000">
+            <input type = "text" , name = 'h_input' , placeholder="range between 0 to 100"> <br>
+            <br>
+
+            <b>Speechiness</b>  :  <br>
+            <label for="a little">a little</label><input type="radio" name="i"  value="10">
+            <input type="radio" name="i" value="20">
+            <input type="radio" name="i"  value="30">
+            <input type="radio" name="i" value="40">
+            <input type="radio" name="i"  value="50">
+            <label for="a lot">a lot</label><br>
+            <label for="enter value">enter value</label><input type="radio" name="i"  value="100000">
+            <input type = "text" , name = 'i_input' , placeholder="range between 0 to 50"> <br>
+            <br>
+
+            <br> 
+            
+            <label for="genre">Choose a genre you mostly like:</label>
+            <select name="genre" id="genre" >
+            <option value="pop">pop</option>
+            <option value="classic pop">classic pop</option>
+            <option value="idol">idol</option>
+            <option value="indie">indie</option>
+            <option value="indie rock">indie rock</option>    
+            <option value="indie pop">indie pop</option>    
+            <option value="hip hop">hip hop</option>    
+            <option value="folk pop">folk pop</option>
+            <option value="folk rock">folk rock</option>    
+            <option value="folk">folk</option>  
+            <option value="rock">rock</option>    
+            <option value="unknown">unknown</option>          
+            </select>
+
+            <br>
+
+            <input type ="submit" , value = "submit">
+           
+        </form>
+        
+        <br>
+        <br>
+        <p>Create by<a href='https://github.com/chinnapaht/spotify_project'> Chinnapaht Kaniknant</a></p>
+        
+        
+    </body>
+
+
+
+
+
+</html>
