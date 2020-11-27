@@ -1,7 +1,7 @@
 # Recommend Song Base on Clustering :Project Overview
 * Created a tool that recommends the songs by using audio features to help the people to find the thai song base on their preference.
-* Optimized the Kmean using the Elbowmethod , Silhouette Score to compare between the original data and the data that have been transform form the PCA method.
-* Built a simple website using Flask.
+* Optimized the Kmean algorithm using the Elbow method , Silhouette Score to compare between the original data and the data that have been transform form the PCA method.
+* Built a simple website using Flask and deployed on heroku.
 
 ## Code and Resources
 **Python Version**: 3.8
