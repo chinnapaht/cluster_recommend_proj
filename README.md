@@ -9,7 +9,9 @@
 **Packages**: pandas, numpy, sklearn, matplotlib, seaborn, altair, flask, pickle 
 
 **Data Source** : http://organizeyourmusic.playlistmachinery.com/#
+
 **Deploy ML model on webpage tutorial** : https://www.youtube.com/watch?v=i3RMlrx4ol4&t=487s 
+
 **Push the Flasks Apps to Heroku tutorial** : https://www.youtube.com/watch?v=Li0Abz-KT78&t=526s
 
 ## Data Cleaning
